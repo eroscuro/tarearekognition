@@ -1,1 +1,1 @@
-# tarearekognition
+# Tarea AWS Rekognition
