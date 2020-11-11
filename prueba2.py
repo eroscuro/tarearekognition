@@ -7,10 +7,16 @@ Created on Tue Nov 10 10:59:38 2020
 #Librerías para este programa
 import boto3
 import re
+from datetime import datetime
 
 #Función para detectar palabras coincidentes entre imagen de control e imagen de prueba
 def detect_text(photo, bucket, confidence):
     
+    f = open("logs.txt", "a")
+    f.write('Fecha de prueba:' + datetime.now().strftime("%d/%m/%Y %H:%M:%S") + '\n')
+    f.write('Intervalo de confianza establecido: ' + str(confidence) + '\n')
+    f.write("Palabras en imagen de control: \n")
+    f.write("[ \n")
     #Cargar palabras en imagen de control
     client_control = boto3.client('rekognition')
 
@@ -34,7 +40,9 @@ def detect_text(photo, bucket, confidence):
         #independiente
             x = text['DetectedText'].split()
             for i in x:
-                lista_control.append(re.sub(r'[^(á-ú)*\w*@*]','',i).lower())
+                standarized = re.sub(r'[^(á-ú)*\w*@*]','',i).lower()
+                lista_control.append(standarized)
+                f.write("    " + i + ", \n")
                 """    
                 print ('Detected text:' + text['DetectedText'])
                 print ('Confidence: ' + "{:.2f}".format(text['Confidence']) + "%")
@@ -45,7 +53,9 @@ def detect_text(photo, bucket, confidence):
                 print()
                 """
             
-
+    f.write("] \n")
+    f.write("Palabras en imagen de prueba y resultado: \n")
+    f.write("[ \n")
     #Cargar palabras en imagen de prueba
     client=boto3.client('rekognition')
 
@@ -71,9 +81,11 @@ def detect_text(photo, bucket, confidence):
                 if texto not in already_tested:
                     already_tested.append(texto)
                     if texto in lista_control:
+                        f.write("    " + i + ': True, \n')
                         print(i + ': True')
                         print()
                     else:
+                        f.write("    " + i + ': False, \n')
                         print(i + ': False')
                         print()
                 """
@@ -85,7 +97,9 @@ def detect_text(photo, bucket, confidence):
                 print ('Type:' + text['Type'])
                 print()
                 """
-            
+    
+    f.write("]\n")
+    f.close()
 def main():
 
     bucket= input('Nombre del bucket S3: ')
