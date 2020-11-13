@@ -10,7 +10,7 @@ import re
 from datetime import datetime
 
 #Función para detectar palabras coincidentes entre imagen de control e imagen de prueba
-def detect_text(photo, bucket, confidence):
+def detect_text(photo, bucket, confidence, photo_control):
     
     f = open("logs.txt", "a")
     f.write('Fecha de prueba:' + datetime.now().strftime("%d/%m/%Y %H:%M:%S") + '\n')
@@ -21,11 +21,11 @@ def detect_text(photo, bucket, confidence):
     client_control = boto3.client('rekognition')
 
     response_control=client_control.detect_text(Image={'S3Object':{
-                                            'Bucket':'pdsw',
-                                            'Name':'control.png'}
+                                            'Bucket': bucket,
+                                            'Name':photo_control}
                                         },
                                 Filters={'WordFilter':{
-                                            'MinConfidence': 97}})
+                                            'MinConfidence': confidence}})
     
     textDetections_control=response_control['TextDetections']
     
@@ -82,21 +82,22 @@ def detect_text(photo, bucket, confidence):
         
     if flag == 0:
         print("Resultado: true")
-        f.write("Resultado: true")
+        f.write("Resultado: true \n")
     else:
         print("Resultado: false")
-        f.write("Resultado: false")
+        f.write("Resultado: false \n")
+    f.write('\n')
     f.close()
 def main():
-
-    bucket= input('Nombre del bucket S3: ')
-    photo= input('Nombre del archivo a cargar: ')
-    try:
-        confidence = float(input('Porcentaje de confianza: '))
-        print()
-        detect_text(photo,bucket, confidence)
-    except:
-        print("Algo ocurrió. Por favor, revise los datos ingresados y verifique que sean válidos. Considere que el archivo debe estar en formato .jpg, .jpeg o .png.")
+    
+    bucket = input('Nombre del bucket S3: ')
+    photo_control = input('Nombre de imagen de control: ')
+    photo = input('Nombre de imagen de prueba: ')
+    confidence = float(input('Porcentaje de confianza: '))
+    
+    print()
+    detect_text(photo,bucket, confidence, photo_control)
+    #print("Algo ocurrió. Por favor, revise los datos ingresados y verifique que sean válidos. Considere que el archivo debe estar en formato .jpg, .jpeg o .png.")
 
 if __name__ == "__main__":
     main()
