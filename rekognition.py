@@ -43,15 +43,6 @@ def detect_text(photo, bucket, confidence):
                 if standarized not in lista_control:
                     lista_control.append(standarized)
                     f.write(standarized + ", ")
-                """    
-                print ('Detected text:' + text['DetectedText'])
-                print ('Confidence: ' + "{:.2f}".format(text['Confidence']) + "%")
-                print ('Id: {}'.format(text['Id']))
-                if 'ParentId' in text:
-                    print ('Parent Id: {}'.format(text['ParentId']))
-                print ('Type:' + text['Type'])
-                print()
-                """
             
     f.write("] \n")
     f.write("Palabras en " + photo + ": \n")
@@ -69,7 +60,7 @@ def detect_text(photo, bucket, confidence):
     textDetections=response['TextDetections']
     
     #Se verifica si las palabras en imagen de control están en imagen de prueba
-    already_tested = []
+    lista_prueba = []
     
     #Se chequea si la palabra ha sido testeada, si no es así se guarda en la lista
     #de palabras testeadas y se transforma a minúscula para ver si se encuentra en
@@ -79,22 +70,16 @@ def detect_text(photo, bucket, confidence):
             x = text['DetectedText'].split()
             for i in x:
                 texto = re.sub(r'[^(á-ú)*\w*@*]','',i).lower()
-                if texto not in already_tested:
-                    already_tested.append(texto)
+                if texto not in lista_prueba:
+                    lista_prueba.append(texto)
                     f.write(texto + ', ')
-                    if texto not in lista_control:
-                        flag = 1
-                """
-                print ('Detected text:' + text['DetectedText'])
-                print ('Confidence: ' + "{:.2f}".format(text['Confidence']) + "%")
-                print ('Id: {}'.format(text['Id']))
-                if 'ParentId' in text:
-                    print ('Parent Id: {}'.format(text['ParentId']))
-                print ('Type:' + text['Type'])
-                print()
-                """
-    
+                
     f.write("] \n")
+    for word in lista_control:
+        if word not in lista_prueba:
+            flag = 1
+            break
+        
     if flag == 0:
         print("Resultado: true")
         f.write("Resultado: true")
