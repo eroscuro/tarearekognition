@@ -14,7 +14,7 @@ Por otra parte se debe instalar `boto3` para poder utilizar los servicios que el
 
 El programa se debe ejecutar por consola sin introducir ningún parámetro en específico.
 
-`python3 prueba2.py`
+`python3 rekognition.py`
 
 Tras ejecutar este comando el programa solicitará el nombre del bucket donde se encuentra la Imagen de prueba, el nombre de esta y la confianza en la detección de palabras.
 
