@@ -1,6 +1,6 @@
 # Rekognition: It's Monday, but keep smiling.
 
-Este programa detecta las palabras de una imagen cargada por el usuario (esta imagen será llamada la Imagen de prueba) y detecta las palabras que se encuentran en esta. Tras la detección lleva a cabo una comparación con las palabras en [esta imagen](https://docs.aws.amazon.com/es_es/rekognition/latest/dg/images/text.png) (la llamaremos Imagen de control) y da aviso de si las palabras en la Imagen de prueba se encuentran en la Imagen de control.
+Este programa creado en Python detecta las palabras de una imagen cargada por el usuario (esta imagen será llamada la Imagen de prueba) y detecta las palabras que se encuentran en esta. Tras la detección lleva a cabo una comparación con las palabras en [esta imagen](https://docs.aws.amazon.com/es_es/rekognition/latest/dg/images/text.png) (la llamaremos Imagen de control) y da aviso de si las palabras en la Imagen de prueba se encuentran en la Imagen de control.
 
 ## Instalación
 
