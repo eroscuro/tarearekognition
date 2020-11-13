@@ -1,10 +1,10 @@
 # Rekognition: It's Monday, but keep smiling.
 
-Este programa creado en Python detecta las palabras de una imagen cargada por el usuario (esta imagen será llamada la Imagen de prueba) y detecta las palabras que se encuentran en esta. Tras la detección lleva a cabo una comparación con las palabras en [esta imagen](https://docs.aws.amazon.com/es_es/rekognition/latest/dg/images/text.png) (la llamaremos Imagen de control) y da aviso de si las palabras en la Imagen de prueba se encuentran en la Imagen de control.
+Este programa creado en Python realiza la comparación de texto en dos imágenes subidas por el usuario: una imagen de control (la que determinará que texto identificar) y la imagen de prueba (imagen que se utilizará para ver si contiene el texto de la imagen de control). Entrega como respuesta True si el texto de la imagen de prueba se encuentra en la imagen de control y False en caso contrario.
 
 ## Instalación
 
-Para ejecutar este programa es necesario tener una versión de **Python 3.7** o mayor. Además, se debe contar con una cuenta que permita el uso de [Amazon S3](https://aws.amazon.com/es/s3/) y tener actualizadas las credenciales.
+Para ejecutar este programa es necesario tener una versión de **Python 3.7** o mayor. Además, se debe contar con una cuenta que permita el uso de [Amazon S3](https://aws.amazon.com/es/s3/) y tener actualizadas las credenciales (referirse a [este](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-install.html) artículo).
 
 Por otra parte se debe instalar `boto3` para poder utilizar los servicios que el programa requiere de Amazon. Para esto se debe utilizar [pip](https://pip.pypa.io/en/stable/).
 
@@ -20,11 +20,14 @@ Tras ejecutar este comando el programa solicitará el nombre del bucket donde se
 
 ```
 Nombre del bucket S3:
-Nombre del archivo a cargar:
+Nombre del imagen de control:
+Nombre del imagen de prueba:
 Porcentaje de confianza:
 ```
 
 Se debe introducir el nombre de la imagen junto a su formato.
+
+**Nota:** el porcentaje de confianza se introduce de la manera (por ejemplo) 97 y no 0.97.
 
 ## Limitaciones
 
