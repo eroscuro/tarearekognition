@@ -1,0 +1,146 @@
+
+Fecha de prueba:13/11/2020 12:44:30
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en p2.jpg: 
+[its, monday, but, keep, smiling, smilingsmiling, ] 
+Resultado: true 
+
+Fecha de prueba:13/11/2020 12:59:55
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en p4.jpg: 
+[smiling, but, monday, keep, ] 
+Resultado: false 
+
+Fecha de prueba:13/11/2020 13:47:25
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en 20.jpg: 
+[monday, but, keep, smiling, ] 
+Resultado: false 
+
+
+Fecha de prueba:13/11/2020 13:56:49
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en op25.jpg: 
+[monday, its, but, keep, smiling, ] 
+Resultado: true 
+
+Fecha de prueba:13/11/2020 13:57:23
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en op15.jpg: 
+[keep, smiling, ] 
+Resultado: false 
+
+Fecha de prueba:13/11/2020 14:09:39
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en 19.jpg: 
+[its, but, keep, smiling, and, be, awesome, nita, versatile, ] 
+Resultado: false 
+
+Fecha de prueba:13/11/2020 14:15:10
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en 17.jpg: 
+[monday, but, smile, ] 
+Resultado: false 
+
+Fecha de prueba:13/11/2020 14:25:33
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en 23.jpg: 
+[its, monday, but, keep, smiling, barewallscom, ] 
+Resultado: true 
+
+Fecha de prueba:13/11/2020 16:14:39
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en 6.jpg: 
+[its, monday, but, keep, ] 
+Resultado: false 
+
+Fecha de prueba:13/11/2020 16:15:27
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en 20.jpg: 
+[monday, but, keep, smiling, ] 
+Resultado: false 
+
+Fecha de prueba:13/11/2020 16:16:05
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en p2.jpg: 
+[its, monday, but, keep, smiling, smilingsmiling, ] 
+Resultado: true 
+
+Fecha de prueba:13/11/2020 16:16:31
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en p3.jpg: 
+[] 
+Resultado: false 
+
+Fecha de prueba:13/11/2020 16:16:53
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en p4.jpg: 
+[smiling, but, monday, keep, ] 
+Resultado: false 
+
+Fecha de prueba:13/11/2020 16:17:20
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en op25.jpg: 
+[monday, its, but, keep, smiling, ] 
+Resultado: true 
+
+Fecha de prueba:13/11/2020 16:17:40
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en op15.jpg: 
+[keep, smiling, ] 
+Resultado: false 
+
+Fecha de prueba:13/11/2020 16:18:09
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en 17.jpg: 
+[monday, but, smile, ] 
+Resultado: false 
+
+Fecha de prueba:13/11/2020 16:18:41
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en 23.jpg: 
+[its, monday, but, keep, smiling, barewallscom, ] 
+Resultado: true 
+
+Fecha de prueba:13/11/2020 16:24:10
+Intervalo de confianza establecido: 97.0
+Palabras en imagen de control: 
+[its, monday, but, keep, smiling, ] 
+Palabras en 19.jpg: 
+[its, but, keep, smiling, and, be, awesome, nita, versatile, ] 
+Resultado: false 
+
